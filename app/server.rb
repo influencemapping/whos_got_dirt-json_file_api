@@ -15,7 +15,7 @@ FuzzyMatch.engine = :amatch
 
 module WhosGotDirt
   class JSONFileAPI < Sinatra::Base
-    WHITELIST = ENV['WHOSGOTDIRT_WHITELIST'].split(';')
+    WHITELIST = ENV['WHOSGOTDIRT_WHITELIST'].split(',')
 
     register Sinatra::CrossOrigin
     enable :cross_origin

@@ -15,8 +15,10 @@ The `:url` parameter must be a whitelisted URL that returns a **JSON array**. Th
 
 ```
 bundle
-WHOSGOTDIRT_WHITELIST=http://quienmanda.es/entities.json bundle exec rackup
+export WHOSGOTDIRT_WHITELIST=http://quienmanda.es/entities.json,https://wdts-dizzib0.rhcloud.com/api/nodes
+bundle exec rackup
 curl http://localhost:9292/http%3A%2F%2Fquienmanda.es%2Fentities.json?path=/name&q=instituto
+curl http://localhost:9292/https%3A%2F%2Fwdts-dizzib0.rhcloud.com%2Fapi%2Fnodes?path=/name&q=mtv
 ```
 
 ## Deployment
@@ -24,8 +26,8 @@ curl http://localhost:9292/http%3A%2F%2Fquienmanda.es%2Fentities.json?path=/name
 ```
 heroku apps:create
 heroku addons:create memcachier:dev
-heroku config:set WHOSGOTDIRT_WHITELIST=http://quienmanda.es/entities.json
-heroku config:set WHOSGOTDIRT_THRESHOLD=0.4
+heroku config:set WHOSGOTDIRT_WHITELIST=http://quienmanda.es/entities.json,https://wdts-dizzib0.rhcloud.com/api/nodes
+heroku config:set WHOSGOTDIRT_THRESHOLD=0.2
 git push heroku master
 ```
 
