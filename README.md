@@ -3,7 +3,7 @@
 [![Dependency Status](https://gemnasium.com/influencemapping/whos_got_dirt-json_file_api.png)](https://gemnasium.com/influencemapping/whos_got_dirt-json_file_api)
 [![Code Climate](https://codeclimate.com/github/influencemapping/whos_got_dirt-json_file_api.png)](https://codeclimate.com/github/influencemapping/whos_got_dirt-json_file_api)
 
-This server wraps remote JSON files in a simple API.
+This is a simple API that wraps remote JSON files.
 
 ## API
 
