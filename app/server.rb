@@ -51,6 +51,7 @@ module WhosGotDirt
       # @param [String] error_message an error message
       # @return [Array] the status code and error message
       def error(status_code, error_message)
+        content_type 'application/json'
         [status_code, JSON.dump({error: {message: error_message}})]
       end
 
