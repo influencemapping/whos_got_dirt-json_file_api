@@ -69,8 +69,11 @@ module WhosGotDirt
     get '/*' do
       # Sinatra collapses the slashes in the splat.
       url = URI::Parser.new.unescape(env['REQUEST_PATH'][1..-1])
+      if url.empty?
+        return error(404, "URL path must be an encoded URL")
+      end
       if !WHITELIST.include?(url)
-        return error(404, "'#{url}' is not whitelisted")
+        return error(404, "'#{url}' is not a whitelisted URL")
       end
       ['path', 'q'].each do |parameter|
         if !params.key?(parameter)
